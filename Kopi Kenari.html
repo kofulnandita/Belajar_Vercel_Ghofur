@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kopi Kenari – Kedai Kopi di Jakarta Selatan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAF2EE; --surface:#FFFFFF; --ink:#10302D; --muted:#4C6662;
+  --brand:#0E4D4A; --brand-ink:#FFFFFF; --accent:#F2B705; --line:#C5D8D1;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1F1D; --surface:#12302D; --ink:#E6F1ED; --muted:#9DB8B2;
+    --brand:#F2B705; --brand-ink:#10302D; --accent:#F2B705; --line:#25504B;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1F1D; --surface:#12302D; --ink:#E6F1ED; --muted:#9DB8B2;
+  --brand:#F2B705; --brand-ink:#10302D; --accent:#F2B705; --line:#25504B;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+.hero{padding:40px 0 64px}
+.hero h1{font-size:clamp(2.6rem,9vw,6.4rem);line-height:.98;letter-spacing:-.04em;font-weight:800;margin:0 0 24px;max-width:12ch}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.15rem;margin:0 0 28px}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:700}
+.status{display:inline-flex;align-items:center;gap:10px;margin-left:14px;font-weight:600;color:var(--muted)}
+.dot{width:11px;height:11px;border-radius:50%;background:#999}
+.dot.open{background:#2FA66A}
+.beans{margin-top:48px;display:flex;gap:0;border-radius:28px;overflow:hidden;min-height:150px}
+.beans div{flex:1;padding:22px;font-weight:700;display:flex;align-items:flex-end;font-size:1.05rem}
+.b1{background:var(--brand);color:var(--brand-ink)}
+.b2{background:var(--accent);color:#10302D}
+.b3{background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 28px 28px 0}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);letter-spacing:-.03em;margin:0 0 8px;line-height:1.1}
+.sub{color:var(--muted);margin:0 0 28px;max-width:52ch}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.menu{list-style:none;margin:0;padding:0}
+.menu li{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.menu .n{font-weight:700;font-size:1.1rem}
+.menu .d{color:var(--muted);font-size:.95rem;flex:1}
+.menu .p{font-weight:700;white-space:nowrap}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px}
+.card h3{margin:0 0 10px;font-size:1.2rem}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 0}
+td:last-child{text-align:right;font-weight:600}
+tr.today{color:var(--brand);font-weight:800}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) tr.today{color:var(--accent)}}
+footer{padding:36px 0 48px;color:var(--muted);border-top:1px solid var(--line);font-size:.95rem}
+@media (max-width:720px){
+  .cols{grid-template-columns:1fr}
+  nav a{margin-left:14px}
+  .status{margin:14px 0 0 0;display:flex}
+  .beans{flex-direction:column;border-radius:24px}
+  .b3{border-left:1px solid var(--line);border-radius:0}
+  .menu li{flex-wrap:wrap}
+  .menu .d{flex-basis:100%;order:3}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#">Kopi Kenari</a>
+    <nav><a href="#menu">Menu</a><a href="#kunjungi">Kunjungi</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Kopi pagi, dari kebun ke gelasmu.</h1>
+      <p>Kedai kecil di Kebayoran Baru. Biji dari petani Gayo, Kintamani, dan Flores, disangrai tiap minggu dan diseduh tanpa terburu-buru.</p>
+      <a class="btn" href="#menu">Lihat menu</a>
+      <span class="status" aria-live="polite"><span class="dot" id="dot"></span><span id="statusText">Memeriksa jam buka…</span></span>
+      <div class="beans" aria-hidden="true">
+        <div class="b1">Gayo<br>Aceh</div>
+        <div class="b2">Kintamani<br>Bali</div>
+        <div class="b3">Bajawa<br>Flores</div>
+      </div>
+    </div>
+
+    <section id="menu">
+      <h2>Menu</h2>
+      <p class="sub">Semua minuman bisa dipesan panas atau dingin, kecuali yang ditandai.</p>
+      <div class="tabs" role="tablist" aria-label="Kategori menu">
+        <button class="tab" role="tab" aria-selected="true" data-cat="kopi">Kopi</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="nonkopi">Non-kopi</button>
+        <button class="tab" role="tab" aria-selected="false" data-cat="makan">Makanan</button>
+      </div>
+      <ul class="menu" id="menuList"></ul>
+    </section>
+
+    <section id="kunjungi">
+      <h2>Kunjungi kami</h2>
+      <p class="sub">Jl. Kenari No. 12, Kebayoran Baru, Jakarta Selatan. Lima menit jalan kaki dari stasiun MRT terdekat.</p>
+      <div class="cols">
+        <div class="card">
+          <h3>Jam buka</h3>
+          <table id="hours"></table>
+        </div>
+        <div class="card">
+          <h3>Pesan atau tanya</h3>
+          <p>Mau reservasi meja untuk rombongan atau pesan biji kopi? Kirim pesan lewat WhatsApp.</p>
+          <a class="btn" href="https://wa.me/6281200000000">Chat WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Kopi Kenari. Situs contoh; nama, alamat, dan nomor telepon bersifat fiktif.</footer>
+</div>
+
+<script>
+var MENU = {
+  kopi:[
+    ["Kopi Tubruk Gayo","Seduh tradisional, pekat, ampas halus","22.000"],
+    ["V60 Kintamani","Segar, ada rasa jeruk dan madu","32.000"],
+    ["Es Kopi Susu Kenari","Espresso, susu segar, gula aren","28.000"],
+    ["Flat White","Espresso ganda dengan susu mikro-foam","30.000"]
+  ],
+  nonkopi:[
+    ["Teh Tarik Jahe","Teh hitam, susu, jahe segar (hanya panas)","24.000"],
+    ["Cokelat Aceh","Cokelat pekat dari biji lokal","27.000"],
+    ["Es Jeruk Kintamani","Jeruk peras dan sedikit garam (hanya dingin)","22.000"]
+  ],
+  makan:[
+    ["Roti Bakar Srikaya","Roti tebal, selai srikaya, mentega","25.000"],
+    ["Pisang Goreng Keju","Pisang kepok, keju, susu kental manis","23.000"],
+    ["Nasi Goreng Kampung","Telur mata sapi dan kerupuk","38.000"]
+  ]
+};
+var HOURS = [["Minggu",8,22],["Senin",7,22],["Selasa",7,22],["Rabu",7,22],["Kamis",7,22],["Jumat",7,23],["Sabtu",8,23]];
+function pad(n){return (n<10?"0":"")+n+".00"}
+
+var list=document.getElementById("menuList");
+function render(cat){
+  list.innerHTML="";
+  MENU[cat].forEach(function(m){
+    var li=document.createElement("li");
+    li.innerHTML='<span class="n"></span><span class="p"></span><span class="d"></span>';
+    li.children[0].textContent=m[0];
+    li.children[1].textContent="Rp"+m[2];
+    li.children[2].textContent=m[1];
+    list.appendChild(li);
+  });
+}
+document.querySelectorAll(".tab").forEach(function(t){
+  t.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-selected","false")});
+    t.setAttribute("aria-selected","true");
+    render(t.dataset.cat);
+  });
+});
+render("kopi");
+
+var now=new Date();
+var tb=document.getElementById("hours");
+HOURS.forEach(function(h,i){
+  var tr=document.createElement("tr");
+  if(i===now.getDay())tr.className="today";
+  tr.innerHTML="<td></td><td></td>";
+  tr.children[0].textContent=h[0];
+  tr.children[1].textContent=pad(h[1])+" – "+pad(h[2]);
+  tb.appendChild(tr);
+});
+var h=HOURS[now.getDay()], hr=now.getHours()+now.getMinutes()/60;
+var open=hr>=h[1]&&hr<h[2];
+document.getElementById("dot").className="dot"+(open?" open":"");
+document.getElementById("statusText").textContent=open?"Buka sekarang, tutup pukul "+pad(h[2]):"Tutup, buka lagi pukul "+pad(h[1])+" (hari ini)";
+</script>
+</body>
+</html>
