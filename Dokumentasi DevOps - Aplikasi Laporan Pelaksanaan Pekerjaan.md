@@ -1,6 +1,7 @@
 # Dokumentasi DevOps: Aplikasi Laporan Pelaksanaan Pekerjaan
 
-*Disusun oleh: \[Nama kamu\], DevOps. Versi 1.0, \[tanggal\]. Bagian bertanda \[ISI\] perlu dilengkapi sesuai kondisi project.*
+*Disusun oleh: Abdul Ghofur, DevOps*
+* Versi 1.0, 21 Oktober 2026.
 
 ## 1. Ringkasan Project
 
@@ -211,4 +212,4 @@ Hasil pipeline dikirim ke \[ISI: Telegram / Slack / email\].
 
 | Versi | Tanggal | Perubahan | Penulis |
 | --- | --- | --- | --- |
-| 1.0 | \[tanggal\] | Dokumen awal | \[nama\] |
+| 1.0 | 21 Oktober 2026 | Dokumen awal | Abdul Ghofur |
