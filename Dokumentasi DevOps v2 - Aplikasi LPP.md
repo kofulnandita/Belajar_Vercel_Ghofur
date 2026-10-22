@@ -1,4 +1,4 @@
-# Dokumentasi DevOps v2: Aplikasi Laporan Pelaksanaan Pekerjaan (LPP)
+# Dokumentasi DevOps: Dokumen Technology Stack Aplikasi diLPPin
 
 Oct 22, 2026 · @Ghofur
 
