@@ -1,6 +1,6 @@
 # Dokumentasi DevOps: Dokumen Technology Stack Aplikasi diLPPin
-
-Oct 22, 2026 · @Ghofur
+Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD dari sisi DevOps.
+*Disusun oleh: Abdul Ghofur, DevOps. Versi 1.0, 22 Oktober 2026.*
 
 Aplikasi LPP membuat laporan pelaksanaan pekerjaan secara otomatis dan berjalan sebagai lima komponen (frontend, auth, backend, processor, database) di satu VM Linux internal lewat Docker Compose dan Nginx. Versi 2 ini memperbarui stack, environment, dan CI/CD berdasarkan dokumentasi terbaru repository. Bagian bertanda **\[ISI\]** menunggu konfirmasi tim.
 
