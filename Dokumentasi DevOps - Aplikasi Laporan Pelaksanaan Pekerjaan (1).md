@@ -1,10 +1,11 @@
 # Dokumen Technology Stack Aplikasi Web diLPPin 
 
+Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD dari sisi DevOps.
 *Disusun oleh: Abdul Ghofur, DevOps. Versi 1.0, 21 Oktober 2026.*
 
-## 1. Ringkasan Project
 
-diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat laporan pelaksanaan pekerjaan. Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD dari sisi DevOps.
+## 1. Ringkasan Project
+diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat laporan pelaksanaan pekerjaan.Tujuannya supaya setiap awal bulan, report LPP bulan sebelumnya bisa dibuat otomatis. Format hasilnya harus mengikuti LPP yang sekarang, jadi tim nantinya cukup review dan finalisasi, tidak perlu menyusun report dari awal. 
 
 ## 2. Technology Stack
 
@@ -63,7 +64,6 @@ Alur umum:
 | Environment | Tujuan | Server / Hosting | Domain / URL | Deploy dipicu oleh |
 | --- | --- | --- | --- | --- |
 | Development | Pengembangan dan uji coba developer | \[ISI: lokal / server dev\] | \[ISI\] | Push ke branch develop |
-| Staging (opsional) | Uji sebelum production | \[ISI\] | \[ISI\] | Merge ke branch staging |
 | Production | Dipakai pengguna sebenarnya | \[ISI\] | \[ISI\] | Merge ke main, dengan approval |
 
 ### Spesifikasi server
