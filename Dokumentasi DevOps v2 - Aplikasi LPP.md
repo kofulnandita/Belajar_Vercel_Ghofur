@@ -10,7 +10,7 @@ diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat la
 | Item | Keterangan |
 | --- | --- |
 | Nama project | diLPPin (situs: [lpp.pandora.my.id](https://lpp.pandora.my.id/login?next=%2F)) |
-| Versi aplikasi saat ini | \[ISI, dokumentasi menyebut v0.1 sampai v0.3\] |
+| Versi aplikasi saat ini | V0.1, Terdapat 3 Tahap Pengembangan  |
 | Repository | GitHub \[ISI: URL\] |
 | DevOps | Moch.Fathoni Taufikur Rohim, Dzaki Devsi Pratama & Abdul Ghofur |
 | Pembimbing / PIC | Indra Apriana |
@@ -65,7 +65,22 @@ Ports, health check, dan tahap CI yang bertanda \[ISI\] perlu dikonfirmasi ke de
 - **Template LPP** perlu diputuskan: masuk ke image atau di-mount sebagai volume. \[ISI\]
 
 ## 3. Arsitektur
+## 1. Topologi
 
+```mermaid
+flowchart LR
+  U[User intranet] -->|HTTPS 443| WEB[web: nginx<br/>SPA statis + reverse proxy]
+  subgraph VM["VM Linux (docker compose)"]
+    WEB -->|/api/*, /healthz, /readyz| BE[backend:8080<br/>Go]
+    BE --> PG[(db: postgres:16)]
+    PR[processor<br/>Python + LibreOffice] --> PG
+    BE --- V[(volume data)]
+    PR --- V
+    PG --- VP[(volume pgdata)]
+    BK[backup cron host] --> PG
+    BK --> V
+  end
+  BK -->|rsync/NFS| NAS[(Storage backup)]
 ```
 Pengguna (browser)
       |
@@ -311,5 +326,4 @@ Catat setiap insiden: tanggal, gejala, penyebab, perbaikan, dan pencegahan.
 
 | Versi | Tanggal | Perubahan | Penulis |
 | --- | --- | --- | --- |
-| 1.0 | \[ISI\] | Dokumen awal dengan template umum | \[nama\] |
-| 2.0 | 2026-10-22 | Stack diperbarui dari dokumentasi repository (service auth, processor, VM internal), pipeline berbasis path, backup /data, pertanyaan konsultasi | \[nama\] |
+| 1.0 | 2026-10-22 | Stack diperbarui dari dokumentasi repository (service auth, processor, VM internal), pipeline berbasis path, backup /data, pertanyaan konsultasi | \[nama\] |
