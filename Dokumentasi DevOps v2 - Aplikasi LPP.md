@@ -2,19 +2,18 @@
 Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD dari sisi DevOps.
 *Disusun oleh: Abdul Ghofur, DevOps. Versi 1.0, 22 Oktober 2026.*
 
-Aplikasi LPP membuat laporan pelaksanaan pekerjaan secara otomatis dan berjalan sebagai lima komponen (frontend, auth, backend, processor, database) di satu VM Linux internal lewat Docker Compose dan Nginx. Versi 2 ini memperbarui stack, environment, dan CI/CD berdasarkan dokumentasi terbaru repository. Bagian bertanda **\[ISI\]** menunggu konfirmasi tim.
 
 ## 1. Ringkasan Project
 
-Aplikasi ini membantu karyawan menyusun laporan tanpa pekerjaan manual. Pengguna mengunggah data, sistem memprosesnya sebagai job, lalu menghasilkan laporan DOCX atau PDF berdasarkan template. Terdapat tiga peran pengguna: Superadmin, Admin, dan Operator.
+diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat laporan pelaksanaan pekerjaan.Tujuannya supaya setiap awal bulan, report LPP bulan sebelumnya bisa dibuat otomatis. Format hasilnya harus mengikuti LPP yang sekarang, jadi tim nantinya cukup review dan finalisasi, tidak perlu menyusun report dari awal. 
 
 | Item | Keterangan |
 | --- | --- |
-| Nama project | Aplikasi LPP (situs: lpp.pandora.my.id) |
+| Nama project | diLPPin (situs: lpp.pandora.my.id) |
 | Versi aplikasi saat ini | \[ISI, dokumentasi menyebut v0.1 sampai v0.3\] |
 | Repository | GitHub \[ISI: URL\] |
-| Penanggung jawab DevOps | \[nama kamu\] |
-| Pembimbing / PIC | \[ISI\] |
+| DevOps | Moch.Fathoni Taufikur Rohim, Dzaki Devsi Pratama & Abdul Ghofur |
+| Pembimbing / PIC | Indra Apriana |
 
 ## 2. Technology Stack
 
