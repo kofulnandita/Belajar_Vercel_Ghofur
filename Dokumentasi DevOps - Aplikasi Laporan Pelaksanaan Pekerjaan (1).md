@@ -1,10 +1,10 @@
-# Dokumentasi DevOps: Aplikasi Laporan Pelaksanaan Pekerjaan
+# Dokumen Technology Stack Aplikasi Web diLPPin 
 
-*Disusun oleh: \[Nama kamu\], DevOps. Versi 1.0, \[tanggal\]. Bagian bertanda \[ISI\] perlu dilengkapi sesuai kondisi project.*
+*Disusun oleh: Abdul Ghofur, DevOps. Versi 1.0, 21 Oktober 2026.*
 
 ## 1. Ringkasan Project
 
-Aplikasi ini membantu karyawan membuat laporan pelaksanaan pekerjaan secara otomatis sehingga tidak perlu menyusun laporan secara manual. Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD dari sisi DevOps.
+diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat laporan pelaksanaan pekerjaan. Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD dari sisi DevOps.
 
 ## 2. Technology Stack
 
@@ -226,4 +226,4 @@ Hasil pipeline dikirim ke \[ISI: Telegram / Slack / email\].
 
 | Versi | Tanggal | Perubahan | Penulis |
 | --- | --- | --- | --- |
-| 1.0 | \[tanggal\] | Dokumen awal | \[nama\] |
+| 1.0 | 21 Oktober 2026 | Dokumen awal | Abdul Ghofur |
