@@ -9,7 +9,7 @@ diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat la
 
 | Item | Keterangan |
 | --- | --- |
-| Nama project | diLPPin (situs: lpp.pandora.my.id) |
+| Nama project | diLPPin (situs: [lpp.pandora.my.id](https://lpp.pandora.my.id/login?next=%2F)) |
 | Versi aplikasi saat ini | \[ISI, dokumentasi menyebut v0.1 sampai v0.3\] |
 | Repository | GitHub \[ISI: URL\] |
 | DevOps | Moch.Fathoni Taufikur Rohim, Dzaki Devsi Pratama & Abdul Ghofur |
