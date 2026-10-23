@@ -19,8 +19,8 @@ diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat la
 
 ### 2.1 Komponen dan teknologi
 
-| Bagian | Folder | Stack | Versi |
-| --- | --- | --- | --- |
+| Bagian | Folder | Stack | Versi | Alasan pemilihan |
+| --- | --- | --- | --- | --- |
 | Frontend | frontend/ | React + TypeScript (Vite SPA), Tailwind + shadcn/ui, React Query | \[ISI\] |
 | Auth | auth/ | Node + Better Auth: daftar, login, OTP email, lupa sandi, sesi, admin user; menerbitkan JWT ES256 | Node 24 |
 | Backend | backend/ | Go (stdlib net/http, pgx, goose): API, upload, antrian job, verifikasi JWT dan izin dari DB | Go \[ISI\] |
