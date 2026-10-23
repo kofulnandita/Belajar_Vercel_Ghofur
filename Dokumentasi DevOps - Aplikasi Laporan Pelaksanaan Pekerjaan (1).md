@@ -32,11 +32,24 @@ diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat la
 | PLpgSQL | 0,9% | Function atau migrasi database |
 | Lainnya | 0,7% | - |
 
-**Catatan untuk DevOps:** LibreOffice harus terpasang di image container service Python agar konversi dokumen berjalan. Ini membuat image lebih besar dan perlu font yang sesuai agar hasil PDF rapi. Konfirmasi juga ke developer fungsi komponen "agent" yang tercantum di topik repository.
 
 ## 3. Arsitektur Aplikasi
 
-&#91;Sisipkan diagram dari draw.io atau Excalidraw\]
+```mermaid
+flowchart LR
+  U[User intranet] -->|HTTPS 443| WEB[web: nginx<br/>SPA statis + reverse proxy]
+  subgraph VM["VM Linux (docker compose)"]
+    WEB -->|/api/*, /healthz, /readyz| BE[backend:8080<br/>Go]
+    BE --> PG[(db: postgres:16)]
+    PR[processor<br/>Python + LibreOffice] --> PG
+    BE --- V[(volume data)]
+    PR --- V
+    PG --- VP[(volume pgdata)]
+    BK[backup cron host] --> PG
+    BK --> V
+  end
+  BK -->|rsync/NFS| NAS[(Storage backup)]
+```
 
 Alur umum:
 
