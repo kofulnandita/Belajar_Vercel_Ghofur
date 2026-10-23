@@ -326,4 +326,4 @@ Catat setiap insiden: tanggal, gejala, penyebab, perbaikan, dan pencegahan.
 
 | Versi | Tanggal | Perubahan | Penulis |
 | --- | --- | --- | --- |
-| 1.0 | 2026-10-22 | Stack diperbarui dari dokumentasi repository (service auth, processor, VM internal), pipeline berbasis path, backup /data, pertanyaan konsultasi | \[nama\] |
+| 1.0 | 2026-10-22 | Stack diperbarui dari dokumentasi repository (service auth, processor, VM internal), pipeline berbasis path, backup /data, pertanyaan konsultasi | Abdul Ghofur  |
