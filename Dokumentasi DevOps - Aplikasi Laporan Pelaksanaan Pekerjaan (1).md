@@ -9,20 +9,16 @@ diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat la
 
 ## 2. Technology Stack
 
-| Layer | Teknologi | Versi | Fungsi di project ini | Alasan pemilihan |
+| Bagian | Folder | Stack | Versi | Alasan pemilihan |
 | --- | --- | --- | --- | --- |
-| Frontend | React, TypeScript, Vite | \[ISI\] | Antarmuka pengguna; Vite sebagai build tool dan dev server | Ekosistem luas, type-safe, build cepat |
-| Styling | CSS | - | Tampilan antarmuka | \[ISI\] |
-| Backend API | Go (Golang) | \[ISI, mis. 1.22\] | REST API, autentikasi, logika bisnis | Performa tinggi, binary ringan, cocok untuk container |
-| Service otomasi laporan | Python, LibreOffice (headless) | \[ISI\] | Generate laporan DOCX dan PDF secara otomatis; LibreOffice untuk konversi dokumen | Library dokumen lengkap, konversi DOCX ke PDF |
-| Agent | \[ISI: konfirmasi ke developer\] | \[ISI\] | \[ISI\] | \[ISI\] |
-| Database | PostgreSQL (termasuk PL/pgSQL) | \[ISI, mis. 16\] | Penyimpanan data; PL/pgSQL untuk function, trigger, atau migrasi | Stabil, open source, mendukung relasi kompleks |
-| Scripting | Shell (Bash) | - | Script bantu untuk deploy, backup, atau setup | Ringan dan tersedia di semua server Linux |
-| Containerization | Docker, Docker Compose | \[ISI\] | Membungkus semua service agar konsisten di semua environment | Environment seragam dari dev sampai production |
-| Version control | Git (GitHub) | - | Manajemen kode dan kolaborasi | Standar industri |
-| CI/CD | \[GitHub Actions / lainnya\] | - | Build, test, dan deploy otomatis | Terintegrasi dengan repository |
-| Reverse proxy | \[Nginx / Traefik\] | \[ISI\] | Routing, SSL, serving frontend | \[ISI\] |
-| Monitoring dan logging | \[ISI, mis. Prometheus + Grafana, Loki\] | \[ISI\] | Memantau kesehatan aplikasi dan log | \[ISI\] |
+| Frontend | frontend/ | React + TypeScript (Vite SPA), Tailwind + shadcn/ui, React Query | \[ISI\] |
+| Auth | auth/ | Node + Better Auth: daftar, login, OTP email, lupa sandi, sesi, admin user; menerbitkan JWT ES256 | Node 24 |
+| Backend | backend/ | Go (stdlib net/http, pgx, goose): API, upload, antrian job, verifikasi JWT dan izin dari DB | Go \[ISI\] |
+| Processor | processor/ | Python: pandas/openpyxl, docxtpl, LibreOffice headless (PDF), AI agent (v0.3) | Python 3.12 |
+| Template LPP | lpp\_templates/ | template.docx + manifest.yaml + processor.py per template | - |
+| Database | - | PostgreSQL (termasuk PL/pgSQL untuk function dan migrasi) | 16 |
+| Deploy | deploy/, docker-compose.yml | Docker Compose di VM Linux internal, Nginx sebagai reverse proxy | \[ISI\] |
+| Script bantu | \[ISI\] | Shell (Bash) | - |
 
 **Sumber data stack:** komposisi bahasa dan topik repository diambil dari halaman GitHub project (situs: lpp.pandora.my.id). Komposisi bahasa saat ini:
 
