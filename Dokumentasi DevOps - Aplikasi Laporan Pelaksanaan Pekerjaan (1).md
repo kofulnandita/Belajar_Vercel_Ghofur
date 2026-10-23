@@ -103,7 +103,7 @@ Aplikasi berjalan di satu VM Linux menggunakan Docker Compose dan hanya dapat di
 | --- | --- | --- | --- |
 | frontend | node (build) lalu nginx | 80 | Hasil build React disajikan oleh Nginx |
 | backend | golang (build) lalu alpine | \[ISI, mis. 8080\] | API Go |
-| report-service | python:3.x-slim | \[ISI, mis. 8000\] | Service otomasi laporan |
+| auth | python:3.x-slim | \[ISI, mis. 8000\] | Service otomasi laporan |
 | db | postgres | 5432 (internal saja) | Tidak dibuka ke publik |
 
 ## 4. Environment
