@@ -20,7 +20,7 @@ diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat la
 | Deploy | deploy/, docker-compose.yml | Docker Compose di VM Linux internal, Nginx sebagai reverse proxy | Menjalankan semua komponen di satu VM. Nginx menyajikan frontend, meneruskan request API, dan menjadi satu-satunya pintu masuk dari luar | Aplikasi internal di satu VM, jadi Docker Compose cukup dan jauh lebih sederhana daripada Kubernetes. Docker membuat environment dev, staging, dan production seragam. Nginx menyajikan SPA, meneruskan API, dan menjadi satu-satunya pintu masuk dari luar. 
 | Script bantu | - | Shell (Bash) | Tugas sederhana seperti backup terjadwal dan setup |Shell tersedia di semua server Linux tanpa dependensi tambahan, cocok untuk tugas sederhana seperti backup terjadwal dan setup. 
 
-**Sumber data stack:** komposisi bahasa dan topik repository diambil dari halaman GitHub project (situs: lpp.pandora.my.id). Komposisi bahasa saat ini:
+**Sumber data stack:** komposisi bahasa dan topik repository diambil dari halaman GitHub project documen README.md (situs: https://github.com/mahasajo/diLPPin/blob/main/README.md). Komposisi bahasa saat ini:
 
 | Bahasa | Persentase | Peran |
 | --- | --- | --- |
