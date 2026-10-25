@@ -1,4 +1,4 @@
-# Dokumen Technology Stack Aplikasi Web diLPPin 
+# Dokumen Technology Stack Aplikasi Web "diLPPin"
 
 Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD dari sisi DevOps.
 *Disusun oleh: Abdul Ghofur, DevOps. Versi 1.0, 21 Oktober 2026.*
