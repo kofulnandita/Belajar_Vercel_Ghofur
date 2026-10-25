@@ -101,10 +101,11 @@ Aplikasi berjalan di satu VM Linux menggunakan Docker Compose dan hanya dapat di
 
 | Container | Image dasar | Port | Keterangan |
 | --- | --- | --- | --- |
-| frontend | node (build) lalu nginx | 80 | Hasil build React disajikan oleh Nginx |
-| backend | golang (build) lalu alpine | \[ISI, mis. 8080\] | API Go |
-| auth | python:3.x-slim | \[ISI, mis. 8000\] | Service otomasi laporan |
-| db | postgres | 5432 (internal saja) | Tidak dibuka ke publik |
+| processor | dilppin-processor  | - | container yang memproses data yang didapat dari processor|
+| backend | dilppin-backend | 8080 | - |
+| auth | dilppin-auth | 3000 | -|
+| web | dilppin-web | 8000:80 | Layanan web; port 80 di container dipetakan ke port 8000 di host |
+| db | postgres | 5432 | Database PostgreSQL |
 
 ## 4. Environment
 
