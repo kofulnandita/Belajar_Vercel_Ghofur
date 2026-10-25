@@ -313,23 +313,7 @@ Hasil pipeline dikirim ke \[ISI: Telegram / Slack / email\].
 3. Perbaiki di branch feature, lalu push ulang.
 4. Jika deploy production gagal, lakukan rollback (lihat bagian 7).
 
-## 7. Deployment Manual, Backup, dan Rollback
-
-### Deployment manual (cadangan jika CI/CD bermasalah)
-
-1. Login ke server lewat SSH.
-2. Install Docker dan Docker Compose \[ISI perintah sesuai OS\].
-3. Clone repository dan salin `.env.example` menjadi `.env`, lalu isi nilainya.
-4. Jalankan `docker compose up -d --build`.
-5. Cek status dengan `docker compose ps` dan `docker compose logs -f`.
-
-### Backup database
-
-- Metode: `pg_dump` terjadwal lewat cron.
-- Frekuensi: \[ISI, mis. harian pukul 02.00\].
-- Lokasi penyimpanan: \[ISI\].
-- Retensi: \[ISI, mis. 7 hari terakhir\].
-- Cara restore: \[ISI, mis. `psql` atau `pg_restore`\].
+## 7. Backup, dan Rollback
 
 ### Rollback
 
