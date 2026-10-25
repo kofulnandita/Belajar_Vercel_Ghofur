@@ -128,7 +128,7 @@ Hardening dasar: login SSH key-only, `PermitRootLogin no`, ufw default deny, una
 
 ### Jaringan dan keamanan
 
-- Port yang dibuka ke publik: port 80 dan 80.
+- Port yang dibuka ke publik: port 8080.
 - Port yang hanya internal: 5432 (PostgreSQL).
 - SSL/TLS: Cloudfare.
 - Firewall: Cloudfare.
