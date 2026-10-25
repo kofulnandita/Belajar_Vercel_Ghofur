@@ -21,6 +21,17 @@ Aplikasi ini membantu karyawan membuat laporan pelaksanaan pekerjaan secara otom
 | Reverse proxy | \[Nginx / Traefik\] | \[ISI\] | Routing, SSL, serving frontend | \[ISI\] |
 | Monitoring dan logging | \[ISI, mis. Prometheus + Grafana, Loki\] | \[ISI\] | Memantau kesehatan aplikasi dan log | \[ISI\] |
 
+| Bagian | Folder | Stack | Versi | Alasan pemilihan |
+| --- | --- | --- | --- | --- |
+| Frontend | frontend/ | React + TypeScript (Vite SPA), Tailwind + shadcn/ui, React Query | \[ISI\] |Hasil build berupa file statis yang disajikan Nginx, sehingga tidak butuh server Node saat berjalan dan hemat resource VM. TypeScript menangkap kesalahan tipe sebelum rilis (dicek `tsc` di pipeline). React Query memudahkan pengambilan data dan pemeriksaan status job; shadcn/ui + Tailwind mempercepat pembuatan tampilan yang konsisten. 
+| Auth | auth/ | Node + Better Auth: daftar, login, OTP email, lupa sandi, sesi, admin user; menerbitkan JWT ES256 | Node 24 |Fitur login, OTP email, lupa sandi, dan sesi sudah tersedia sehingga tidak dibuat dari nol, yang mengurangi risiko celah keamanan buatan sendiri. Mengikuti pola Pandora. JWT ES256 bersifat asimetris: backend cukup memegang kunci publik untuk memverifikasi, tanpa bisa menerbitkan token. 
+| Backend | backend/ | Go (stdlib net/http, pgx, goose): API, upload, antrian job, verifikasi JWT dan izin dari DB | Go \[ISI\] |Go menghasilkan satu binary ringan dengan startup cepat dan memori kecil, cocok untuk VM yang juga menjalankan LibreOffice. Pustaka standar `net/http` meminimalkan dependensi. pgx adalah driver PostgreSQL yang efisien, dan goose membuat perubahan skema database terversi dan dapat dilacak. 
+| Processor | processor/ | Python: pandas/openpyxl, docxtpl, LibreOffice headless (PDF), AI agent (v0.3) | Python 3.12 | Python punya ekosistem pengolahan data dan dokumen paling lengkap (pandas, openpyxl, docxtpl) dan mudah memanggil LibreOffice untuk PDF. Dipisah dari backend agar proses berat tidak mengganggu API dan resource-nya bisa dibatasi sendiri. Ekosistem AI juga kuat di Python (AI agent v0.3).
+| Template LPP | lpp\_templates/ | template.docx + manifest.yaml + processor.py per template | - |Format laporan berupa file Word, sehingga bentuk laporan bisa disesuaikan tanpa mengubah kode inti. Logika tiap jenis laporan terpisah (manifest dan processor per template), jadi menambah jenis laporan baru tidak berisiko merusak yang lama. 
+| Database | - | PostgreSQL (termasuk PL/pgSQL untuk function dan migrasi) | 16 |Data aplikasi (pengguna, peran, pekerjaan, laporan) bersifat relasional dan butuh transaksi yang andal. PostgreSQL juga dipakai sebagai antrian job, sehingga tidak perlu menambah komponen seperti Redis atau RabbitMQ. Open source tanpa biaya lisensi, dan PL/pgSQL tersedia untuk function dan migrasi. 
+| Deploy | deploy/, docker-compose.yml | Docker Compose di VM Linux internal, Nginx sebagai reverse proxy | \[ISI\] | Aplikasi internal di satu VM, jadi Docker Compose cukup dan jauh lebih sederhana daripada Kubernetes. Docker membuat environment dev, staging, dan production seragam. Nginx menyajikan SPA, meneruskan API, dan menjadi satu-satunya pintu masuk dari luar. 
+| Script bantu | \[ISI\] | Shell (Bash) | - |Shell tersedia di semua server Linux tanpa dependensi tambahan, cocok untuk tugas sederhana seperti backup terjadwal dan setup. 
+
 **Catatan:** konfirmasi ke developer fungsi Python dan Go masing-masing, karena pembagian tugasnya mempengaruhi desain container dan pipeline.
 
 ## 3. Arsitektur Aplikasi
