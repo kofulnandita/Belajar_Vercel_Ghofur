@@ -128,10 +128,10 @@ Hardening dasar: login SSH key-only, `PermitRootLogin no`, ufw default deny, una
 
 ### Jaringan dan keamanan
 
-- Port yang dibuka ke publik: \[ISI, biasanya 80 dan 443\].
-- Port yang hanya internal: 5432 (PostgreSQL), port API dan service Python.
-- SSL/TLS: \[ISI, mis. Let's Encrypt\].
-- Firewall: \[ISI, mis. UFW dengan aturan apa saja\].
+- Port yang dibuka ke publik: port 80 dan 80.
+- Port yang hanya internal: 5432 (PostgreSQL).
+- SSL/TLS: Cloudfare.
+- Firewall: Cloudfare.
 
 ### Manajemen konfigurasi 
 
