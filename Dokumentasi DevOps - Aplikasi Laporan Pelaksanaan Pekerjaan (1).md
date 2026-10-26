@@ -24,13 +24,13 @@ diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat la
 
 | Bahasa | Persentase | Peran |
 | --- | --- | --- |
-| TypeScript | 52,7% | Frontend React |
-| Python | 23,7% | Service otomasi dan generate laporan |
-| Go | 19,4% | Backend API |
-| CSS | 1,5% | Styling |
-| Shell | 1,1% | Script bantu |
-| PLpgSQL | 0,9% | Function atau migrasi database |
-| Lainnya | 0,7% | - |
+| TypeScript | 48,4% | Frontend React |
+| Python | 23,9% | Service otomasi dan generate laporan |
+| Go | 23,6% | Backend API |
+| CSS | 1,3% | Styling |
+| Shell | 1% | Script bantu |
+| PLpgSQL | 0,8% | Function atau migrasi database |
+| Lainnya | 1% | - |
 
 
 ## 3. Arsitektur Aplikasi
