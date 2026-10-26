@@ -125,8 +125,6 @@ Aplikasi berjalan di satu VM Linux menggunakan Docker Compose dan hanya dapat di
 | Akses jaringan | Masuk: 443 (user), 22 (admin, dari subnet admin saja). Keluar: registry image; v0.2: Grafana/DB sumber | |
 | Zona waktu host | `Asia/Jakarta` | container juga set `TZ` |
 
-Hardening dasar: login SSH key-only, `PermitRootLogin no`, ufw default deny, unattended-upgrades security, user `deploy` (anggota grup docker) untuk deploy.
-
 ### Jaringan dan keamanan
 
 - Port yang dibuka ke publik: port 8080.
