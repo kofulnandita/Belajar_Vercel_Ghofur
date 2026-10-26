@@ -109,10 +109,10 @@ Aplikasi berjalan di satu VM Linux menggunakan Docker Compose dan hanya dapat di
 
 ## 4. Environment
 
-| Environment | Tujuan | Server / Hosting | Domain / URL | Deploy dipicu oleh |
-| --- | --- | --- | --- | --- |
-| Development | pengembangan, hot reload | laptop developer (§4.1) | NULL | NULL
-| Production | pemakaian user | VM, compose project `dilppin`, port 443 | NULL | NULL
+| Environment | Tujuan | Server / Hosting |
+| --- | --- | --- |
+| Development | pengembangan, hot reload | laptop developer (§4.1) |  
+| Production | pemakaian user | VM, compose project `dilppin`, port 443 |  
 
 ### Spesifikasi server
 
@@ -140,7 +140,7 @@ Hardening dasar: login SSH key-only, `PermitRootLogin no`, ufw default deny, una
 - File `.env` tidak boleh masuk Git. Sediakan `.env.example` berisi nama variabel tanpa nilai rahasia.
 - Secret untuk CI/CD disimpan di \[GitHub Secrets / GitLab CI Variables\].
 - Variabel penting: `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, \[ISI variabel lain\].
-- Pihak yang punya akses ke secret: \[ISI\].
+- Pihak yang punya akses ke secret: Backend.
 
 ### Secret
 | Rahasia | Lokasi v0.1 | Rotasi |
@@ -156,6 +156,7 @@ Hardening dasar: login SSH key-only, `PermitRootLogin no`, ufw default deny, una
 
 ## 5. Struktur Repository
 
+```
 diLPPin/
 ├── .github/
 │   └── workflows/            # Pipeline CI/CD GitHub Actions
