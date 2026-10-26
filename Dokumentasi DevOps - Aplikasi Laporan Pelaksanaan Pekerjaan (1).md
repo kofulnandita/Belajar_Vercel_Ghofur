@@ -5,7 +5,7 @@ Dokumen ini menjelaskan technology stack, arsitektur environment, dan alur CI/CD
 
 
 ## 1. Ringkasan Project
-diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat laporan pelaksanaan pekerjaan.Tujuannya supaya setiap awal bulan, report LPP bulan sebelumnya bisa dibuat otomatis. Format hasilnya harus mengikuti LPP yang sekarang, jadi tim nantinya cukup review dan finalisasi, tidak perlu menyusun report dari awal. 
+diLPPin merupakan project Web Aplikasi, aplikasi ini memudahkan dalam membuat laporan pelaksanaan pekerjaan.Tujuannya supaya setiap awal bulan, report LPP (Laporan Pelaksanaan Pekerjaan) bulan sebelumnya bisa dibuat otomatis. Format hasilnya harus mengikuti LPP yang sekarang, jadi tim nantinya cukup review dan finalisasi, tidak perlu menyusun report dari awal. 
 
 ## 2. Technology Stack
 
