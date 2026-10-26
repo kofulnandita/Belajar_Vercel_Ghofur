@@ -156,21 +156,36 @@ Hardening dasar: login SSH key-only, `PermitRootLogin no`, ufw default deny, una
 
 ## 5. Struktur Repository
 
+diLPPin/
+├── .github/
+│   └── workflows/            # Pipeline CI/CD GitHub Actions
+├── auth/                     # Service autentikasi (Node + Better Auth)
+├── backend/                  # API Go (net/http, pgx, goose)
+├── contoh/                   # Contoh dokumen/template (mis. LPP EMS Vgreen)
+├── deploy/                   # Script deploy server dan konfigurasi deployment
+├── docs/                     # Dokumentasi teknis (mis. AUTH.md)
+├── e2e/                      # Pengujian end-to-end (Playwright)
+├── frontend/                 # React + TypeScript (Vite SPA)
+├── lpp_templates/            # Template laporan (template.docx, manifest.yaml, processor.py)
+├── poc/                      # Proof of concept / eksperimen
+├── processor/                # Service Python pembuat laporan (LibreOffice)
+├── .dockerignore
+├── .env.example              # Contoh variabel lingkungan (tanpa nilai rahasia)
+├── .gitattributes
+├── .gitignore
+├── AGENT.md                  # Panduan untuk AI agent dan developer
+├── BRD.md                    # Business Requirements Document
+├── CHANGELOG.md              # Catatan perubahan per rilis
+├── CLAUDE.md                 # Panduan konteks project untuk Claude
+├── CONTRIBUTING.md           # Panduan kontribusi
+├── Goal.md                   # Tujuan project
+├── PRD.md                    # Product Requirements Document
+├── README.md                 # Ringkasan project
+├── docker-compose.yml        # Compose untuk development/dasar
+├── docker-compose.prod.yml   # Compose untuk production
+├── docker-compose.coolify.yml# Compose untuk deployment lewat Coolify
+└── package.json              # Konfigurasi Node tingkat root
 ```
-project/
-├── frontend/            # React
-│   └── Dockerfile
-├── backend/             # Go
-│   └── Dockerfile
-├── report-service/      # Python
-│   └── Dockerfile
-├── docker-compose.yml
-├── .env.example
-├── .github/workflows/   # pipeline CI/CD
-└── docs/                # dokumentasi ini
-```
-
-&#91;Sesuaikan dengan struktur repo yang sebenarnya.\]
 
 ## 6. CI/CD
 ```mermaid
@@ -261,58 +276,6 @@ Tiga tahap pertama berjalan paralel agar lebih cepat. Build image hanya berjalan
 - `:sha` (hash commit): untuk setiap image dari pull request atau merge, mudah dilacak.
 - `vX.Y.Z`: untuk rilis production, dan menjadi acuan rollback.
 
-
-### Contoh konfigurasi pipeline (GitHub Actions)
-
-```yaml
-name: CI-CD
-
-on:
-  push:
-    branches: [develop, main]
-  pull_request:
-    branches: [develop, main]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          go-version: '1.22'
-      - run: cd backend && go test ./...
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: cd frontend && npm ci && npm test
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: cd report-service && pip install -r requirements.txt && pytest
-
-  build-and-deploy:
-    needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: docker compose build
-      # [ISI: login ke registry, push image, lalu SSH ke server dan jalankan docker compose pull && docker compose up -d]
-```
-
-&#91;Sesuaikan versi, nama registry, dan langkah deploy dengan kondisi sebenarnya.\]
-
-### Notifikasi
-
-Hasil pipeline dikirim ke \[ISI: Telegram / Slack / email\].
-
-### Jika pipeline gagal
-
-1. Buka tab Actions dan cari stage yang gagal.
-2. Baca log error pada stage tersebut.
-3. Perbaiki di branch feature, lalu push ulang.
-4. Jika deploy production gagal, lakukan rollback (lihat bagian 7).
 
 ## 7. Backup, dan Rollback
 
