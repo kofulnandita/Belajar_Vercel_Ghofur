@@ -246,12 +246,6 @@ Tanda ‖ berarti tahap berjalan paralel. Jika satu tahap gagal, tahap sesudahny
 
 Tiga tahap pertama berjalan paralel agar lebih cepat. Build image hanya berjalan jika ketiganya lolos.
 
-**Catatan pengujian processor** (berdasarkan pembacaan nama tahap di diagram, perlu dikonfirmasi ke developer):
-
-- **golden:** hasil dokumen dibandingkan dengan berkas acuan yang sudah dianggap benar.
-- **render:** memastikan dokumen berhasil dirender (DOCX ke PDF lewat LibreOffice).
-- **visual:** membandingkan tampilan hasil render, sehingga perubahan layout atau font ketahuan.
-
 ### Fase 2: CD setelah merge
 
 | Tahap | Pemicu | Keterangan |
